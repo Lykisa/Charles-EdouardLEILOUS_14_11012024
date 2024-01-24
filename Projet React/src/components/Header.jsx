@@ -1,7 +1,7 @@
 export default function Header() {
     return (
-        <header>
-            <h1>HR Net</h1>
+        <header className="title">
+            <h1>HRnet</h1>
         </header>
     )
 }
