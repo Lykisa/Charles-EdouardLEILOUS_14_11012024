@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+/* import PropTypes from 'prop-types';
 
 export default function Input({id, type, name, label, options, required}) {
 
@@ -28,4 +28,6 @@ Input.propTypes = {
     label: PropTypes.string,
     options: PropTypes.any,
     required: PropTypes.string
-}
+} */
+
+/* Mis en commentaire pour expliquer que le plug in Input représente ces informations  */

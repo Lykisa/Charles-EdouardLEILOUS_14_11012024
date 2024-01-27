@@ -76,7 +76,11 @@ function EmployeeList() {
 
     return(
         <main>
-            <h1>All Employees</h1> - <Link to="/">Go to main page</Link>
+            <div className="title_employees_page">
+            <h1>Current Employees</h1>
+             - <Link to="/">Home</Link>
+            </div>
+
             {data && 
             <DataTable
                 columns={columns}

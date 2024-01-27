@@ -1,6 +1,9 @@
-import Input from "../components/Input"
+/* import Input from "../components/Input"*/
+import { Input as Input } from 'input_custom'
 import { Link } from "react-router-dom"
+import { useState } from 'react';
 import data from '../data/data.json'
+import { Modal } from "react-modal-component-tool";
 
 function Home() {
 
@@ -34,17 +37,34 @@ function Home() {
 
         /* Ajout de la nouvelle liste dans le LS */
         localStorage.setItem('Employee_List', JSON.stringify(employees))
-
+        isModalOpen(true)
     }
-
-
-
+    
+    const [ setModalOpen, isModalOpen ] = useState(false);
+    const handleClick = () => {
+        isModalOpen(!setModalOpen);
+    }
+    
+    
+    
     return(
         <div className="container">
             <Link to='/employee-list'>
                 View Current Employees
             </Link>
             <h2>Create Employee</h2>
+
+            {setModalOpen ? 
+                <>
+                    <Modal addCSS="modale">
+                        <p>Employee successfully added !</p>
+                        <button onClick={handleClick}>Close</button>
+                    </Modal>
+                </>
+                :
+                null
+            }
+
             <form onSubmit={(e) => onSubmit(e)} id="create-employee">
                 <Input  type="text" 
                         name="firstName"
@@ -108,6 +128,7 @@ function Home() {
 
                 <button type="submit">Save</button>
             </form>
+
             
         </div>
     )
